@@ -1,7 +1,7 @@
 var GoogleSpreadsheet = require('google-spreadsheet');
 var creds = require('./client_secret.json')
 var doc = new GoogleSpreadsheet('1D7CvKvJ0o6Wy8ZxZx3Oj4RfwqUaVBs-ueWC6xWZ9-_8');
-var value="";
+var msg="";
 
 
 module.exports = function(graph_api){
@@ -29,14 +29,16 @@ module.exports = function(graph_api){
           // Get all of the rows from the spreadsheet.
           doc.getRows(1, function (err, rows) {
               console.log(rows);
-              value = rows;
+              console.log(rows[0].value)
+              msg=rows[0].value
+
           });
       });
 
 
 
 
-    this._sendMessage(senderID, "Hello MJH!" + value);
+    this._sendMessage(senderID, "Hello MJH!" + msg);
   }
 
   //Send message from the bot to the user

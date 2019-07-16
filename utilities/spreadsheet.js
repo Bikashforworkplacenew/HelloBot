@@ -9,7 +9,7 @@ doc.useServiceAccountAuth(creds, function (err) {
 
     // Get all of the rows from the spreadsheet.
     doc.getRows(1, function (err, rows) {
-        console.log(rows);
+        console.log(rows[0].value);
     });
 });
 
