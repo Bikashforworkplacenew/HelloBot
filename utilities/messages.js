@@ -1,3 +1,7 @@
+var GoogleSpreadsheet = require('google-spreadsheet');
+var creds = require('./client_secret.json')
+
+
 module.exports = function(graph_api){
 
   //Get messages sent to the bot by the user
@@ -18,7 +22,7 @@ module.exports = function(graph_api){
   //Handle received message
   module._handleMessage = function(message) {
     let senderID = message.sender.id;
-    this._sendMessage(senderID, "Hello MJN!");
+    this._sendMessage(senderID, "Hello NHG!");
   }
 
   //Send message from the bot to the user
