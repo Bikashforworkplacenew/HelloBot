@@ -24,14 +24,15 @@ module.exports = function(graph_api){
   //Handle received message
   module._handleMessage = function(message) {
 
-      console.log(message.toString())
+
     let senderID = message.sender.id;
       doc.useServiceAccountAuth(creds, function (err) {
 
           // Get all of the rows from the spreadsheet.
           doc.getRows(1, function (err, rows) {
-              console.log(rows);
+              //console.log(rows);
               console.log(rows[0].value)
+              console.log(message)
               msg=rows[0].value
 
           });
