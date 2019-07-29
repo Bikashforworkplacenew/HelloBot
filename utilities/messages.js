@@ -25,6 +25,7 @@ module.exports = function(graph_api){
   module._handleMessage = function(message) {
     let senderID = message.sender.id;
       doc.useServiceAccountAuth(creds, function (err) {
+
           // Get all of the rows from the spreadsheet.
           doc.getRows(1, function (err, rows) {
               console.log(rows);
@@ -33,14 +34,7 @@ module.exports = function(graph_api){
 
           });
       });
-     if(message.includes("Hey")){
-         this._sendMessage(senderID, "Hello !! I am the Acronym Bot. Please type any term that you dont know off and I can help you gte more information on it :) " + msg);
-     }
-
-     else
-      {
-          this._sendMessage(senderID, "Hello !! I am the Acronym Bot. Please type any term that you dont know off and I can help you gte more information on it :) " );
-      }
+    this._sendMessage(senderID, "Hello " + msg+ " I am the Acronym Bot. Please type any term that you dont know off and I can help you wth that ");
   }
 
   //Send message from the bot to the user
