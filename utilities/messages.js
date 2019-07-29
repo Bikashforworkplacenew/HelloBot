@@ -32,13 +32,13 @@ module.exports = function(graph_api){
           doc.getRows(1, function (err, rows) {
               //console.log(rows);
               console.log(rows[0].value)
-              console.log(message.text())
+              console.log(message.text)
               msg=rows[0].value
 
           });
       });
 
-      this._sendMessage(senderID, "Hello 111" + msg  + " I am the Acronym Bot. Please type any term that you dont know off and I can help you wth that " + message.toString()  );
+      this._sendMessage(senderID, "Hello 111" + msg  + " I am the Acronym Bot. Please type any term that you dont know off and I can help you wth that " ) ;
 
       // if(message.includes("Hey")){
       //     this._sendMessage(senderID, "Hello !! I am the Acronym Bot. Please type any term that you dont know off and I can help you gte more information on it :) " + msg);
