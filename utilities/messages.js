@@ -31,6 +31,7 @@ module.exports = function(graph_api){
           // Get all of the rows from the spreadsheet.
           doc.getRows(1, function (err, rows) {
               //console.log(rows);
+              console.log("console message")
               console.log(rows[0].value)
               //console.log(message)
               //console.log(message.message.text)
@@ -40,11 +41,12 @@ module.exports = function(graph_api){
       });
 
       var incoming_message = message.message.text
+
       //this._sendMessage(senderID, "Hello 111" + msg  + " I am the Acronym Bot. Please type any term that you dont know off and I can help you wth that " ) ;
 
       if(incoming_message.includes("Hey")){
 
-          this._sendMessage(senderID, "Hello !! I am the Acronym Bot. Please type any term that you dont know off and I can help you gte more information on it :) " );
+          this._sendMessage(senderID, "Hello !! I am the Acronym Bot. Please type any term that you dont know off and I can help you get more information on it :) " );
       }
 
       else if (incoming_message.includes("PSM"))
