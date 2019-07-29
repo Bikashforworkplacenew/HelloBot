@@ -32,7 +32,8 @@ module.exports = function(graph_api){
           doc.getRows(1, function (err, rows) {
               //console.log(rows);
               console.log(rows[0].value)
-              console.log(message.text)
+              console.log(message)
+              console.log(message.message.text)
               msg=rows[0].value
 
           });
