@@ -32,24 +32,25 @@ module.exports = function(graph_api){
           doc.getRows(1, function (err, rows) {
               //console.log(rows);
               console.log(rows[0].value)
-              console.log(message)
-              console.log(message.message.text)
+              //console.log(message)
+              //console.log(message.message.text)
               msg=rows[0].value
 
           });
       });
 
+      var incoming_message = message.message.text
       this._sendMessage(senderID, "Hello 111" + msg  + " I am the Acronym Bot. Please type any term that you dont know off and I can help you wth that " ) ;
 
-      // if(message.includes("Hey")){
-      //     this._sendMessage(senderID, "Hello !! I am the Acronym Bot. Please type any term that you dont know off and I can help you gte more information on it :) " + msg);
-      // }
-      //
-      // else
-      // {
-      //     this._sendMessage(senderID, "Hello !! I am the Acronym Bot. Please type any term that you dont know off and I can help you gte more information on it :) " );
-      // }
-      //
+      if(incoming_message.includes("Hey")){
+          this._sendMessage(senderID, "Hello !! I am the Acronym Bot. Please type any term that you dont know off and I can help you gte more information on it :) " + msg);
+      }
+
+      else
+      {
+          this._sendMessage(senderID, "Hello !! I am the Acronym Bot. Please type any term that you dont know off and I can help you gte more information on it :) " );
+      }
+
       // this._sendMessage(senderID, "Hello !! Message is not matching " );
   }
 
