@@ -40,15 +40,17 @@ module.exports = function(graph_api){
       });
 
       var incoming_message = message.message.text
-      this._sendMessage(senderID, "Hello 111" + msg  + " I am the Acronym Bot. Please type any term that you dont know off and I can help you wth that " ) ;
+      //this._sendMessage(senderID, "Hello 111" + msg  + " I am the Acronym Bot. Please type any term that you dont know off and I can help you wth that " ) ;
 
       if(incoming_message.includes("Hey")){
-          this._sendMessage(senderID, "Hello !! I am the Acronym Bot. Please type any term that you dont know off and I can help you gte more information on it :) " + msg);
+
+          this._sendMessage(senderID, "Hello !! I am the Acronym Bot. Please type any term that you dont know off and I can help you gte more information on it :) " );
       }
 
-      else
+      else if (incoming_message.includes("PSM"))
       {
-          this._sendMessage(senderID, "Hello !! I am the Acronym Bot. Please type any term that you dont know off and I can help you gte more information on it :) " );
+          this._sendMessage(senderID, "I guess you want to know about PSM. PSM is " );
+
       }
 
       // this._sendMessage(senderID, "Hello !! Message is not matching " );
