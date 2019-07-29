@@ -34,7 +34,19 @@ module.exports = function(graph_api){
 
           });
       });
-    this._sendMessage(senderID, "Hello " + msg+ " I am the Acronym Bot. Please type any term that you dont know off and I can help you wth that ");
+      
+      this._sendMessage(senderID, "Hello " + msg + " I am the Acronym Bot. Please type any term that you dont know off and I can help you wth that " + message  );
+
+      // if(message.includes("Hey")){
+      //     this._sendMessage(senderID, "Hello !! I am the Acronym Bot. Please type any term that you dont know off and I can help you gte more information on it :) " + msg);
+      // }
+      //
+      // else
+      // {
+      //     this._sendMessage(senderID, "Hello !! I am the Acronym Bot. Please type any term that you dont know off and I can help you gte more information on it :) " );
+      // }
+      //
+      // this._sendMessage(senderID, "Hello !! Message is not matching " );
   }
 
   //Send message from the bot to the user
