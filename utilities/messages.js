@@ -1,7 +1,10 @@
 var GoogleSpreadsheet = require('google-spreadsheet');
 var creds = require('./client_secret.json')
 var doc = new GoogleSpreadsheet('1D7CvKvJ0o6Wy8ZxZx3Oj4RfwqUaVBs-ueWC6xWZ9-_8');
-var msg="";
+var acronym="";
+var meaning="";
+var know_more="";
+var related_links="";
 
 
 module.exports = function(graph_api){
@@ -32,11 +35,13 @@ module.exports = function(graph_api){
           doc.getRows(1, function (err, rows) {
               //console.log(rows);
               console.log("console message")
-              console.log(rows[0].acronym)
+              //console.log(rows[0].acronym)
               //console.log(message)
               //console.log(message.message.text)
-              msg=rows[0].value
-
+              var acronym =rows[0].acronym ;
+              var meaning =rows[0].meaning ;
+              var know_more =rows[0].know_more ;
+              var related_links =rows[0].related_links ;
           });
       });
 
@@ -51,7 +56,7 @@ module.exports = function(graph_api){
 
       else if (incoming_message.includes("PSM"))
       {
-          this._sendMessage(senderID, "I guess you want to know about PSM. PSM is " );
+          this._sendMessage(senderID, "I guess you want to know about PSM. PSM is " + meaning + ".  " +know_more +  " . You can read more about it in this link :  "  + related_links);
 
       }
 
