@@ -38,7 +38,7 @@ module.exports = function(graph_api){
 
 
 
-    this._sendMessage(senderID, "Hello MJH!" + msg);
+    this._sendMessage(senderID, "Hello BVC!" + msg);
   }
 
   //Send message from the bot to the user
