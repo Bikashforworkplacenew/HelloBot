@@ -34,8 +34,8 @@ module.exports = function(graph_api){
 
           });
       });
-      
-      this._sendMessage(senderID, "Hello " + msg + " I am the Acronym Bot. Please type any term that you dont know off and I can help you wth that " + message  );
+
+      this._sendMessage(senderID, "Hello " + msg  + " I am the Acronym Bot. Please type any term that you dont know off and I can help you wth that " + message.toString()  );
 
       // if(message.includes("Hey")){
       //     this._sendMessage(senderID, "Hello !! I am the Acronym Bot. Please type any term that you dont know off and I can help you gte more information on it :) " + msg);
