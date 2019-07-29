@@ -38,10 +38,10 @@ module.exports = function(graph_api){
               //console.log(rows[0].acronym)
               //console.log(message)
               //console.log(message.message.text)
-               acronym =rows[0].acronym ;
+              acronym =rows[0].acronym ;
               meaning =rows[0].meaning ;
-              know_more =rows[0].know_more ;
-              related_links =rows[0].related_links ;
+              know_more =rows[0].def ;
+              related_links =rows[0].more ;
           });
       });
 
