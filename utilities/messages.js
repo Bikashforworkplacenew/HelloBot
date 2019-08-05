@@ -57,7 +57,7 @@ module.exports = function(graph_api){
           if(eachRow.has('PSM')){
               console.log('item present in index ' + eachRow.get('PSM'))
               index=eachRow.get('PSM')-1;
-              acronym =rows[index].acronym ;
+              acronym =rowsval[index].acronym ;
               meaning =rowsval[index].meaning ;
               know_more =rowsval[index].def ;
               related_links =rowsval[index].more ;
@@ -69,10 +69,10 @@ module.exports = function(graph_api){
 
       else if (incoming_message.includes("PDM"))
       {
-          if(eachRow.has('PSM')){
-              console.log('item present in index ' + eachRow.get('PSM'))
-              index=eachRow.get('PSM')-1;
-              acronym =rows[index].acronym ;
+          if(eachRow.has('PDM')){
+              console.log('item present in index ' + eachRow.get('PDM'))
+              index=eachRow.get('PDM')-1;
+              acronym =rowsval[index].acronym ;
               meaning =rowsval[index].meaning ;
               know_more =rowsval[index].def ;
               related_links =rowsval[index].more ;
