@@ -6,6 +6,7 @@ var meaning="";
 var know_more="";
 var related_links="";
 var eachRow;
+var rows;
 
 
 module.exports = function(graph_api){
