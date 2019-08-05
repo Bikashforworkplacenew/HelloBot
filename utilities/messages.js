@@ -35,18 +35,7 @@ module.exports = function(graph_api){
 
           // Get all of the rows from the spreadsheet.
           doc.getRows(1, function (err, rows) {
-              //console.log(rows);
               console.log("console message")
-              //console.log(rows[0].acronym)
-              //console.log(message)
-              //console.log(message.message.text)
-              // acronym =rows[0].acronym ;
-              // meaning =rows[0].meaning ;
-              // know_more =rows[0].def ;
-              // related_links =rows[0].more ;
-
-
-
               rows.forEach(function (rowValue) {
                   eachRow.set(rowValue.acronym, rowValue.index)
 
@@ -56,8 +45,6 @@ module.exports = function(graph_api){
       });
 
       var incoming_message = message.message.text
-
-      //this._sendMessage(senderID, "Hello 111" + msg  + " I am the Acronym Bot. Please type any term that you dont know off and I can help you wth that " ) ;
       console.log(incoming_message)
 
       if(incoming_message.includes("Hey")){
@@ -67,29 +54,37 @@ module.exports = function(graph_api){
 
       else if (incoming_message.includes("PSM"))
       {
-
-          console.log(rowsval)
-
           if(eachRow.has('PSM')){
               console.log('item present in index ' + eachRow.get('PSM'))
-              //console.log('Here is you r data' + rows[(eachRow.get('PSM'))-1].meaning)
-
               index=eachRow.get('PSM')-1;
-              //acronym =rows[index].acronym ;
+              acronym =rows[index].acronym ;
               meaning =rowsval[index].meaning ;
               know_more =rowsval[index].def ;
               related_links =rowsval[index].more ;
-          }
-
-          else{
-              console.log('item not present')
           }
 
           this._sendMessage(senderID, "I guess you want to know about PSM. PSM is " + meaning + ".  " +know_more +  " . You can read more about it in this link :  "  + related_links);
 
       }
 
-      // this._sendMessage(senderID, "Hello !! Message is not matching " );
+      else if (incoming_message.includes("PDM"))
+      {
+          if(eachRow.has('PSM')){
+              console.log('item present in index ' + eachRow.get('PSM'))
+              index=eachRow.get('PSM')-1;
+              acronym =rows[index].acronym ;
+              meaning =rowsval[index].meaning ;
+              know_more =rowsval[index].def ;
+              related_links =rowsval[index].more ;
+          }
+          this._sendMessage(senderID, "I guess you want to know about PDM. PDM is " + meaning + ".  " +know_more +  " . You can read more about it in this link :  "  + related_links);
+
+      }
+
+      else{
+          console.log('item not present')
+      }
+
   }
 
   //Send message from the bot to the user
