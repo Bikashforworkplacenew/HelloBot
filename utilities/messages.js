@@ -45,7 +45,7 @@ module.exports = function(graph_api){
               // know_more =rows[0].def ;
               // related_links =rows[0].more ;
 
-               
+
 
               rows.forEach(function (rowValue) {
                   eachRow.set(rowValue.acronym, rowValue.index)
@@ -56,6 +56,7 @@ module.exports = function(graph_api){
       var incoming_message = message.message.text
 
       //this._sendMessage(senderID, "Hello 111" + msg  + " I am the Acronym Bot. Please type any term that you dont know off and I can help you wth that " ) ;
+      console.log(incoming_message)
 
       if(incoming_message.includes("Hey")){
 
