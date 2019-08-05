@@ -67,7 +67,7 @@ module.exports = function(graph_api){
 
           if(eachRow.has('PSM')){
               console.log('item present in index ' + eachRow.get('PSM'))
-              console.log('Here is you r data' + rows[(eachRow.get('PSM'))-1].meaning)
+              //console.log('Here is you r data' + rows[(eachRow.get('PSM'))-1].meaning)
 
               index=eachRow.get('PSM')-1;
               acronym =rows[index].acronym ;
