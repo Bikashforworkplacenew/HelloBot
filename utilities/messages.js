@@ -5,6 +5,7 @@ var acronym="";
 var meaning="";
 var know_more="";
 var related_links="";
+var eachRow;
 
 
 module.exports = function(graph_api){
@@ -38,10 +39,16 @@ module.exports = function(graph_api){
               //console.log(rows[0].acronym)
               //console.log(message)
               //console.log(message.message.text)
-              acronym =rows[0].acronym ;
-              meaning =rows[0].meaning ;
-              know_more =rows[0].def ;
-              related_links =rows[0].more ;
+              // acronym =rows[0].acronym ;
+              // meaning =rows[0].meaning ;
+              // know_more =rows[0].def ;
+              // related_links =rows[0].more ;
+
+               eachRow = new Map();
+
+              rows.forEach(function (rowValue) {
+                  eachRow.set(rowValue.acronym, rowValue.index)
+              })
           });
       });
 
@@ -56,6 +63,22 @@ module.exports = function(graph_api){
 
       else if (incoming_message.includes("PSM"))
       {
+
+          if(eachRow.has('PSM')){
+              console.log('item present in index ' + eachRow.get('PSM'))
+              console.log('Here is you r data' + rows[(eachRow.get('PSM'))-1].meaning)
+
+              index=eachRow.get('PSM')-1;
+              acronym =rows[index].acronym ;
+              meaning =rows[index].meaning ;
+              know_more =rows[index].def ;
+              related_links =rows[index].more ;
+          }
+
+          else{
+              console.log('item not present')
+          }
+
           this._sendMessage(senderID, "I guess you want to know about PSM. PSM is " + meaning + ".  " +know_more +  " . You can read more about it in this link :  "  + related_links);
 
       }
