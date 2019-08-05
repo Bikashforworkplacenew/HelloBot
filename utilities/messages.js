@@ -72,8 +72,8 @@ module.exports = function(graph_api){
               console.log('item present in index ' + eachRow.get('PSM'))
               //console.log('Here is you r data' + rows[(eachRow.get('PSM'))-1].meaning)
 
-              index=parseInt(eachRow.get('PSM'))-1;
-              acronym =rows[index].acronym ;
+              index=eachRow.get('PSM')-1;
+              //acronym =rows[index].acronym ;
               meaning =rows[index].meaning ;
               know_more =rows[index].def ;
               related_links =rows[index].more ;
