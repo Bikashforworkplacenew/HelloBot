@@ -74,7 +74,7 @@ module.exports = function(graph_api){
 
               index=eachRow.get('PSM')-1;
               //acronym =rows[index].acronym ;
-              meaning =rows[index].meaning ;
+              meaning =rows[0].meaning ;
               know_more =rows[index].def ;
               related_links =rows[index].more ;
           }
