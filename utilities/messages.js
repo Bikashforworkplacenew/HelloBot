@@ -5,7 +5,7 @@ var acronym="";
 var meaning="";
 var know_more="";
 var related_links="";
-var eachRow;
+var eachRow=new Map();
 var rows;
 
 
@@ -45,7 +45,7 @@ module.exports = function(graph_api){
               // know_more =rows[0].def ;
               // related_links =rows[0].more ;
 
-               eachRow = new Map();
+               
 
               rows.forEach(function (rowValue) {
                   eachRow.set(rowValue.acronym, rowValue.index)
