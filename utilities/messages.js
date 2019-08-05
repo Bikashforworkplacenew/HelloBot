@@ -6,7 +6,7 @@ var meaning="";
 var know_more="";
 var related_links="";
 var eachRow=new Map();
-var rows;
+var rowsval;
 
 
 module.exports = function(graph_api){
@@ -49,6 +49,8 @@ module.exports = function(graph_api){
 
               rows.forEach(function (rowValue) {
                   eachRow.set(rowValue.acronym, rowValue.index)
+
+                  rowsval=rows;
               })
           });
       });
@@ -66,7 +68,7 @@ module.exports = function(graph_api){
       else if (incoming_message.includes("PSM"))
       {
 
-          console.log(rows)
+          console.log(rowsval)
 
           if(eachRow.has('PSM')){
               console.log('item present in index ' + eachRow.get('PSM'))
@@ -74,7 +76,7 @@ module.exports = function(graph_api){
 
               index=eachRow.get('PSM')-1;
               //acronym =rows[index].acronym ;
-              meaning =rows[0].meaning ;
+              meaning =rows[index].meaning ;
               know_more =rows[index].def ;
               related_links =rows[index].more ;
           }
