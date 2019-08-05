@@ -66,7 +66,7 @@ module.exports = function(graph_api){
       else if (incoming_message.includes("PSM"))
       {
 
-          console.log(eachRow)
+          console.log(rows)
 
           if(eachRow.has('PSM')){
               console.log('item present in index ' + eachRow.get('PSM'))
