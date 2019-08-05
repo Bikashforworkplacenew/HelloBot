@@ -63,7 +63,7 @@ module.exports = function(graph_api){
               related_links =rowsval[index].more ;
           }
 
-          this._sendMessage(senderID, "I guess you want to know about PSM. PSM is " + meaning + ".  " +know_more +  " . You can read more about it in this link :  "  + related_links);
+          this._sendMessage(senderID, "I guess you want to know about "+ incoming_message  +". I can help with you that :)"+ incoming_message + " is " + meaning + ". " +know_more +  " . You can read more about it in this link :  "  + related_links);
 
       }
 
@@ -77,7 +77,7 @@ module.exports = function(graph_api){
               know_more =rowsval[index].def ;
               related_links =rowsval[index].more ;
           }
-          this._sendMessage(senderID, "I guess you want to know about PDM. PDM is " + meaning + ".  " +know_more +  " . You can read more about it in this link :  "  + related_links);
+          this._sendMessage(senderID, "I guess you want to know about "+ incoming_message  +". I can help with you that :)"+ incoming_message + " is " + meaning + ". " +know_more +  " . You can read more about it in this link :  "  + related_links);
 
       }
 
