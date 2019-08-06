@@ -27,7 +27,7 @@ doc.useServiceAccountAuth(creds, function (err) {
 
         if(eachRow.has('PSM')){
             console.log('item present in index ' + eachRow.get('PSM'))
-            console.log('Here is you r data' + rows[(eachRow.get('PSM'))-1].meaning)
+            // console.log('Here is you r data' + rows[(eachRow.get('PSM'))-1].meaning)
         }
         else{
             console.log('item not present')
@@ -35,9 +35,12 @@ doc.useServiceAccountAuth(creds, function (err) {
 
 
         // console.log(rows[0].acronym);
-         console.log(rows[0].meaning);
-        // console.log(rows[0].def);
-        // console.log(rows[0].more);
+
+        index=eachRow.get('PSM')-1;
+
+        console.log(rows[index].meaning);
+        console.log(rows[index].def);
+        console.log(rows[index].more);
 
     });
 });

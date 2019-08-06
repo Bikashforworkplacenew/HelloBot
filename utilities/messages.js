@@ -82,7 +82,7 @@ module.exports = function(graph_api){
       }
 
       else{
-          console.log('item not present')
+          this._sendMessage(senderID, "item not present");
       }
 
   }
