@@ -52,7 +52,7 @@ module.exports = function(graph_api){
           this._sendMessage(senderID, "Hello !! I am the Acronym Bot. Please type any term that you dont know off and I can help you get more information on it :) " );
       }
 
-      if(incoming_message.length > 0) {
+      else if(incoming_message.length > 0) {
           if (incoming_message.includes("PSM")) {
               if (eachRow.has('PSM')) {
                   console.log('item present in index ' + eachRow.get('PSM'))
