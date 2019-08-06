@@ -63,7 +63,7 @@ module.exports = function(graph_api){
           //     }
           if (eachRow.has(incoming_message)) {
               console.log('item present in index ' + eachRow.get(incoming_message))
-              index = eachRow.get('PSM') - 1;
+              index = eachRow.get(incoming_message) - 1;
               acronym = rowsval[index].acronym;
               meaning = rowsval[index].meaning;
               know_more = rowsval[index].def;
