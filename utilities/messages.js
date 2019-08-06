@@ -52,37 +52,36 @@ module.exports = function(graph_api){
           this._sendMessage(senderID, "Hello !! I am the Acronym Bot. Please type any term that you dont know off and I can help you get more information on it :) " );
       }
 
-      else if (incoming_message.includes("PSM"))
-      {
-          if(eachRow.has('PSM')){
-              console.log('item present in index ' + eachRow.get('PSM'))
-              index=eachRow.get('PSM')-1;
-              acronym =rowsval[index].acronym ;
-              meaning =rowsval[index].meaning ;
-              know_more =rowsval[index].def ;
-              related_links =rowsval[index].more ;
+      if(incoming_message.length > 0) {
+          if (incoming_message.includes("PSM")) {
+              if (eachRow.has('PSM')) {
+                  console.log('item present in index ' + eachRow.get('PSM'))
+                  index = eachRow.get('PSM') - 1;
+                  acronym = rowsval[index].acronym;
+                  meaning = rowsval[index].meaning;
+                  know_more = rowsval[index].def;
+                  related_links = rowsval[index].more;
+              }
+
+              this._sendMessage(senderID, "I guess you want to know about " + incoming_message + ". I can help with you that :)" + incoming_message + " is " + meaning + ". " + know_more + " . You can read more about it in this link :  " + related_links);
+
+          } else if (incoming_message.includes("PDM")) {
+              if (eachRow.has('PDM')) {
+                  console.log('item present in index ' + eachRow.get('PDM'))
+                  index = eachRow.get('PDM') - 1;
+                  acronym = rowsval[index].acronym;
+                  meaning = rowsval[index].meaning;
+                  know_more = rowsval[index].def;
+                  related_links = rowsval[index].more;
+              }
+              this._sendMessage(senderID, "I guess you want to know about " + incoming_message + ". I can help with you that :)" + incoming_message + " is " + meaning + ". " + know_more + " . You can read more about it in this link :  " + related_links);
+
           }
 
-          this._sendMessage(senderID, "I guess you want to know about "+ incoming_message  +". I can help with you that :)"+ incoming_message + " is " + meaning + ". " +know_more +  " . You can read more about it in this link :  "  + related_links);
 
-      }
-
-      else if (incoming_message.includes("PDM"))
-      {
-          if(eachRow.has('PDM')){
-              console.log('item present in index ' + eachRow.get('PDM'))
-              index=eachRow.get('PDM')-1;
-              acronym =rowsval[index].acronym ;
-              meaning =rowsval[index].meaning ;
-              know_more =rowsval[index].def ;
-              related_links =rowsval[index].more ;
+      else {
+              this._sendMessage(senderID, "item not present");
           }
-          this._sendMessage(senderID, "I guess you want to know about "+ incoming_message  +". I can help with you that :)"+ incoming_message + " is " + meaning + ". " +know_more +  " . You can read more about it in this link :  "  + related_links);
-
-      }
-
-      else{
-          this._sendMessage(senderID, "item not present");
       }
 
   }
