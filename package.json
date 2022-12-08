@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/panreel/wp-sample-hello#readme",
   "dependencies": {
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "google-spreadsheet": "^2.0.3",
     "request": "^2.87.0"
   }
